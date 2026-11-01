@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Agence Visionnaire | Systèmes de Boostage & SEO Élite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- ========================================== -->
+    <!-- INTERFACE CLIENTS (FORMULAIRE DE CAPTURE)  -->
+    <!-- ========================================== -->
+    <div id="client-view" class="flex flex-col justify-between min-h-screen">
+        <header class="p-6 border-b border-zinc-800 flex justify-between items-center max-w-7xl mx-auto w-full">
+            <div class="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-amber-500">
+                VISIONNAIRE_AGENCY
+            </div>
+            <a href="https://wa.me/221776195239" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-all text-sm">
+                CLOSE UN CONTRAT EN DIRECT
+            </a>
+        </header>
+
+        <main class="flex-grow flex items-center justify-center px-4 my-12">
+            <div class="max-w-xl w-full bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 shadow-2xl backdrop-blur-md">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Mentalité Keo : Zéro Blabla, des Résultats</span>
+                    <h1 class="text-3xl font-extrabold mt-2 tracking-tight">Débloquez votre Trafic & Dominez la Concurrence</h1>
+                    <p class="text-zinc-400 mt-2 text-sm">Recherchez votre levier, sélectionnez-le et valisez le contrat d'acquisition sur WhatsApp.</p>
+                </div>
+
+                <form action="https://formspree.io/f/xnppbbjo" method="POST" class="space-y-5">
+                    <input type="hidden" name="_replyto" value="levisionnaire130@gmail.com">
+                    <input type="hidden" name="_next" value="https://wa.me/221776195239">
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-zinc-400 mb-2">Nom de l'Entreprise / Dirigeant</label>
+                        <input type="text" name="entreprise" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-white focus:outline-none focus:border-red-600 transition" placeholder="Ex: Empire Corp">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-zinc-400 mb-2">Numéro WhatsApp (Avec indicatif pays)</label>
+                        <input type="tel" name="whatsapp_client" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-white focus:outline-none focus:border-red-600 transition" placeholder="Ex: +221 77 619 52 39">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-zinc-400 mb-2">Rechercher un modèle de Boostage</label>
+                        <input type="text" id="searchBoost" onkeyup="filterBoostage()" class="w-full bg-zinc-950 border border-zinc-800 rounded-t-lg p-3 text-white focus:outline-none focus:border-amber-500 transition text-sm" placeholder="Tapez : TikTok, Google, SEO, Instagram...">
+                        
+                        <div id="boostList" class="bg-zinc-950 border-x border-b border-zinc-800 max-h-48 overflow-y-auto rounded-b-lg p-1 space-y-1">
+                            <div class="boost-item p-3 hover:bg-zinc-900 cursor-pointer rounded flex justify-between items-center transition" onclick="selectBoost('🚀 Boostage Omniprésence TikTok Ads', '5 000 $ / mois', 'tiktok')">
+                                <div>
+                                    <p class="text-sm font-bold text-white">Boostage Omniprésence TikTok & Shorts</p>
+                                    <span class="text-xs text-zinc-500">Contenu Viral & Ads configurés</span>
+                                </div>
+                                <span class="bg-red-950 text-red-400 text-xs font-black px-3 py-1 rounded-full border border-red-800">5 000 $ / mois</span>
+                            </div>
+                            
+                            <div class="boost-item p-3 hover:bg-zinc-900 cursor-pointer rounded flex justify-between items-center transition" onclick="selectBoost('🎯 Monopole Google Ads Immédiat', '7 500 $ / mois', 'google')">
+                                <div>
+                                    <p class="text-sm font-bold text-white">Monopole Google Ads Immédiat</p>
+                                    <span class="text-xs text-zinc-500">Capture exclusive d'intentions d'achat</span>
+                                </div>
+                                <span class="bg-amber-950 text-amber-400 text-xs font-black px-3 py-1 rounded-full border border-amber-800">7 500 $ / mois</span>
+                            </div>
+
+                            <div class="boost-item p-3 hover:bg-zinc-900 cursor-pointer rounded flex justify-between items-center transition" onclick="selectBoost('🌐 Autorité Élite Google & SEO', '10 000 $ / mois', 'seo')">
+                                <div>
+                                    <p class="text-sm font-bold text-white">Autorité Élite Google & SEO</p>
+                                    <span class="text-xs text-zinc-500">Domination organique et trafic infini</span>
+                                </div>
+                                <span class="bg-emerald-950 text-emerald-400 text-xs font-black px-3 py-1 rounded-full border border-emerald-800">10 000 $ / mois</span>
+                            </div>
+
+                            <div class="boost-item p-3 hover:bg-zinc-900 cursor-pointer rounded flex justify-between items-center transition" onclick="selectBoost('🔥 Smash Social (Instagram, FB & Branding)', '4 500 $ / mois', 'instagram facebook reseaux sociaux')">
+                                <div>
+                                    <p class="text-sm font-bold text-white">Smash Social Premium (Insta & FB)</p>
+                                    <span class="text-xs text-zinc-500">Acquisition d'audience qualifiée</span>
+                                </div>
+                                <span class="bg-blue-950 text-blue-400 text-xs font-black px-3 py-1 rounded-full border border-blue-800">4 500 $ / mois</span>
+                            </div>
+
+                            <div class="boost-item p-3 hover:bg-zinc-900 cursor-pointer rounded flex justify-between items-center transition" onclick="selectBoost('⚡ Acquisition Flash Événementielle', '6 000 $ / mois', 'evenementiel lancement')">
+                                <div>
+                                    <p class="text-sm font-bold text-white">Acquisition Flash Événementielle</p>
+                                    <span class="text-xs text-zinc-500">Système tunnel pour lancements massifs</span>
+                                </div>
+                                <span class="bg-purple-950 text-purple-400 text-xs font-black px-3 py-1 rounded-full border border-purple-800">6 000 $ / mois</span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="selected_boostage_package" name="boostage_choisi" required>
+                    </div>
+
+                    <div id="selection-badge" class="hidden bg-zinc-900 border border-zinc-800 p-4 rounded-lg flex justify-between items-center animate-pulse">
+                        <div>
+                            <span class="text-xs text-zinc-500 uppercase tracking-widest block">Solution Sélectionnée</span>
+                            <span id="badge-name" class="text-sm font-bold text-white"></span>
+                        </div>
+                        <span id="badge-price" class="text-sm font-black text-amber-500"></span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-zinc-400 mb-2">Objectif Principal de Croissance</label>
+                        <textarea name="objectifs" rows="3" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-white focus:outline-none focus:border-red-600 transition" placeholder="Quel chiffre d'affaires visez-vous ? Décrivez votre activité..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-red-600 to-amber-500 font-bold uppercase tracking-wider rounded-lg shadow-lg hover:opacity-90 transition duration-300">
+                        Déployer la Stratégie Impériale & Activer WhatsApp
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="p-6 flex justify-between items-center text-xs text-zinc-600 border-t border-zinc-900 w-full max-w-7xl mx-auto">
+            <div>&copy; 2026 Visionnaire Agency. Tous droits réservés.</div>
+            <button onclick="showLockscreen()" class="text-zinc-800 hover:text-zinc-500 transition-all font-bold">🛠️ ACCÈS CONSOLE</button>
+        </footer>
+    </div>
+
+    <div id="lockscreen-view" class="fixed inset-0 bg-black flex items-center justify-center p-4 hidden">
+        <div class="max-w-md w-full bg-zinc-900 p-8 rounded-xl border border-zinc-800 text-center">
+            <h2 class="text-xl font-bold text-red-500 mb-4 uppercase tracking-widest">Accès Restreint Directeur</h2>
+            <p class="text-xs text-zinc-400 mb-6">Entrez la clé maîtresse de l'agence pour charger le suivi des revenus.</p>
+            <input type="password" id="passwordInput" class="w-full bg-black border border-zinc-700 rounded p-3 text-center tracking-widest text-white mb-4 focus:outline-none focus:border-red-600" placeholder="••••••••••••">
+            <div class="flex gap-2">
+                <button onclick="hideLockscreen()" class="w-1/2 bg-zinc-800 py-3 rounded font-bold uppercase text-sm hover:bg-zinc-700 transition">Retour</button>
+                <button onclick="verifyKey()" class="w-1/2 bg-red-600 py-3 rounded font-bold uppercase text-sm hover:bg-red-700 transition">Débloquer</button>
+            </div>
+            <p id="errorMessage" class="text-red-500 text-xs mt-3 hidden">Clé invalide. Accès refusé.</p>
+        </div>
+    </div>
+
+    <div id="dashboard-view" class="fixed inset-0 bg-black overflow-y-auto p-6 hidden">
+        <div class="w-full max-w-6xl mx-auto bg-zinc-950 border border-zinc-900 p-8 rounded-2xl my-6">
+            <div class="flex justify-between items-center mb-8 border-b border-zinc-900 pb-4">
+                <div>
+                    <h1 class="text-2xl font-black text-amber-500">LE VISIONNAIRE - CONSOLE</h1>
+                    <p class="text-xs text-zinc-500">Statut de l'Agence : En Scale Agressif (2026)</p>
+                </div>
+                <button onclick="logout()" class="text-xs bg-zinc-900 hover:bg-zinc-800 px-4 py-2 rounded text-zinc-400">Verrouiller la console</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-xl">
+                    <p class="text-xs uppercase text-zinc-400 font-bold">Objectif Mensuel</p>
+                    <p class="text-3xl font-extrabold text-white mt-2">300 000 $</p>
+                    <div class="w-full bg-zinc-800 h-2 rounded-full mt-4 overflow-hidden">
+                        <div class="bg-gradient-to-r from-red-600 to-amber-500 h-full w-[45%]"></div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-xl">
+                    <p class="text-xs uppercase text-zinc-400 font-bold">Taux de Closing Moyen</p>
+                    <p class="text-3xl font-extrabold text-emerald-500 mt-2">38.5 %</p>
+                    <p class="text-zinc-500 text-xs mt-2">Source : Appels WhatsApp Directs</p>
+                </div>
+                <div class="bg-zinc-900/40 border border-zinc-800 p-6 rounded-xl">
+                    <p class="text-xs uppercase text-zinc-400 font-bold">Filtre Catalogue Dynamique</p>
+                    <p class="text-3xl font-extrabold text-amber-500 mt-2">Actif & Clé Validée</p>
+                    <p class="text-zinc-500 text-xs mt-2">Système automatisé 24/7</p>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/20 border border-zinc-800/80 p-4 rounded-xl text-sm text-zinc-400">
+                <p class="font-bold text-white mb-1">Configuration des alertes de production :</p>
+                <p>📩 Réception des leads : <span class="text-amber-500">levisionnaire130@gmail.com</span></p>
+                <p>💬 Canal de Closing Instantané : <span class="text-emerald-500">WhatsApp (+221 77 619 52 39)</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterBoostage() {
+            let input = document.getElementById('searchBoost').value.toLowerCase();
+            let items = document.getElementsByClassName('boost-item');
+            
+            for (let i = 0; i < items.length; i++) {
+                let tags = items[i].getAttribute('onclick').toLowerCase();
+                if (tags.includes(input)) {
+                    items[i].style.display = "flex";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+        function selectBoost(name, price, tags) {
+            document.getElementById('selected_boostage_package').value = name + " (" + price + ")";
+            document.getElementById('searchBoost').value = name;
+            
+            document.getElementById('badge-name').innerText = name;
+            document.getElementById('badge-price').innerText = price;
+            document.getElementById('selection-badge').classList.remove('hidden');
+        }
+
+        function showLockscreen() {
+            document.getElementById('lockscreen-view').classList.remove('hidden');
+        }
+
+        function hideLockscreen() {
+            document.getElementById('lockscreen-view').classList.add('hidden');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('errorMessage').classList.add('hidden');
+        }
+
+        function verifyKey() {
+            const input = document.getElementById('passwordInput').value;
+            if (input === 'Cryptozone47') {
+                document.getElementById('lockscreen-view').classList.add('hidden');
+                document.getElementById('client-view').classList.add('hidden');
+                document.getElementById('dashboard-view').classList.remove('hidden');
+            } else {
+                document.getElementById('errorMessage').classList.remove('hidden');
+            }
+        }
+
+        function logout() {
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('dashboard-view').classList.add('hidden');
+            document.getElementById('client-view').classList.remove('hidden');
+            document.getElementById('errorMessage').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
